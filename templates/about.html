@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<body>
+    {% for about in object_list %}
+        <!-- site content
+        ================================================== -->
+        <div class="s-content content">
+            <main class="row content__page">
+                
+                <section class="column large-full entry format-standard">
+
+                    <div class="media-wrap">
+                        <div>
+                            <img src="{{ about.cover.url }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="content__page-header">
+                        <h1 class="display-1">
+                        {{ about.title }}
+                        </h1>
+                    </div> <!-- end content__page-header -->
+
+                    <p class="lead drop-cap">
+                       {{ about.about_me }}
+                    </p>
+
+    
+                    <h2>{{ about.my_story }}</h2>
+
+                    <p>
+                    {{ about.about_my_story }}
+                    
+
+                    <hr>
+
+                    <div class="row block-large-1-2 block-tab-full">
+                        <div class="column">
+                            <h4>{{ about.who_we }}</h4>
+                            <p>{{ about.about_who_we }}</p>
+                        </div>
+                        <div class="column">
+                                <h4>{{ about.our_mission }}</h4>
+                                <p>{{ about.about_our }}</p>
+                            </div>
+
+                        
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div> 
+        
+    </div>
+    {% endfor %}
+
+
+</body>
+{% endblock %}

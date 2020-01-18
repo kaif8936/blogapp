@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<body> 
+    {% for contact in object_list %}
+
+        <!-- site content
+        ================================================== -->
+        <div class="s-content content">
+            <main class="row content__page">
+                
+                <section class="column large-full entry format-standard">
+
+                    <div class="media-wrap">
+                        <div>
+                            <img src="{{ contact.cover.url }}"  alt="{{ contact.title }}">
+                        </div>
+                    </div>
+
+                    <div class="content__page-header">
+                        <h1 class="display-1">
+                        {{ contact.title }}
+                        </h1>
+                    </div> <!-- end content__page-header -->
+
+                    <p class="lead drop-cap">
+                    {{ contact.about_me }}
+                    </p>
+
+
+                    <div class="row">
+                        <div class="column large-six tab-full">
+                            <h4>{{ contact.where_to_find }}</h4>
+    
+                            <p>
+                            {{ contact.find_1 }} <br>
+                            {{ contact.find_2 }} <br>
+                            {{ contact.find_3 }}
+                            </p>
+    
+                        </div>
+    
+                        <div class="column large-six tab-full">
+                            <h4>{{ contact.contact_info }}</h4>
+    
+                            <p>{{ contact.gmail }}<br>
+                            {{ contact.insta }} <br>
+                            {{ contact.youtube }} <br>
+                            {{ contact.phone }}
+                            </p>
+    
+                        </div>
+                    </div>
+    {% endfor %}
+
+                   <h3> Thank You!</h3>
+                </section>
+            </main>
+
+        </div> <!-- end s-content -->
+
+
+        
+
+    </div> <!-- end s-wrap -->
+    
+
+    
+
+</body>
+{% endblock %}
